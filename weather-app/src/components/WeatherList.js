@@ -9,17 +9,17 @@ import Weather from './Weather';
 const WeatherList = props => {
   return (
     <>
-      <h1>Welcome to the Weather!<h1>
-      <button onClick={props.getData}>
+      <h1>Pokemon! Gotta Catch Em All!</h1>
+      <button onClick={props.getData} className="button">
         {props.isLoading ? (
           <Loader
-            type="Plane"
+            type="tailspin"
             color="00BFFF"
-            height="15"
+            height="20"
             width="100"
           />
         ) : (
-          'Get Weather Data'
+          'Get Pokemon!'
         )}
       </button>
        {props.weathers &&

@@ -8,12 +8,12 @@ export const getData = () => {
   return dispatch => {
     dispatch({ type: FETCH_WEATHER_DATA_START });
     axios
-      .get('https://www.metaweather.com/api/location/search/?query=boston');
+      .get('https://pokeapi.co/api/v2/pokemon')
       .then(res => {
-        dispatch({ type: FETCH_WEATHER_DATA_SUCCESS, payload: res.data });
+        dispatch({ type: FETCH_WEATHER_DATA_SUCCESS, payload: res.data.results })
       })
       .catch(err => {
-        dispatch({ type: FETCH_WEBCAM_DATA_FAILURE, payload: err.response });
+        dispatch({ type: FETCH_WEATHER_DATA_FAILURE, payload: err.response })
       });
   };
 };
